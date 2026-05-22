@@ -18,6 +18,10 @@ app.use(express.urlencoded({ extended: true }));
 // Serve uploaded files statically
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
+app.get("/", (req, res) => {
+  res.send("AI Automated Ticket Handling Backend Running 🚀");
+});
+
 // API Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/tickets', require('./routes/tickets'));
